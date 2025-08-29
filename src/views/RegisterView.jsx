@@ -58,15 +58,13 @@ export const RegisterView = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
     watch
   } = useForm({
     resolver: yupResolver(schema),
     mode: 'onChange' // Validación en tiempo real
   });
-
-  const watchedPassword = watch("password");
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
